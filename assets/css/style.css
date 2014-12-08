@@ -1,0 +1,217 @@
+body {
+	background-image: url('../images/bg_1.jpg');
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position: center; 
+    background-color: #054261;
+    padding: 2% 15%;
+    font-family: tahoma;
+}
+.header {
+/*	border: 1px solid #fff; */
+}
+.header .logo{
+	float: left;
+	border: 0;
+}
+button{
+	border: 0;
+	background-color: #023047;
+	padding: 6px 16px 6px 16px ;
+	color: #C5C8CE;
+	cursor: hand;
+	cursor: pointer;
+	min-width: 90px;
+}
+input{
+	background-color: #407891;
+	color: #fff;
+	border: 0;
+	padding: 5px;
+	margin: 2px;
+}
+.forgot_password{
+	color: #4A7488;
+	font-size: 14px;
+	text-decoration: none;
+	margin-right: 14%;
+}
+.trading_amount{
+	float:right;
+	vertical-align: middle;
+	list-style: none;
+}
+.trading_amount li{
+	 height: 31px;
+	 float: left;
+	 color: #AFBBC0;
+	 font-size: 11px;
+     border: 1px solid;
+     display:table-cell;
+    vertical-align : middle;
+}
+.trading_amount li .active{
+	 color: #000;
+	 background-color: #CFDBE0;
+}
+
+
+.trading_amount li div{
+	text-align: center;
+	height: 32px;
+	display:table-cell;
+	vertical-align: middle;	
+	min-width: 50px;
+}
+
+.trading_amount li img{
+	text-align: center;
+	display:table-cell;
+	height: 40px;
+	margin-top: -4px;
+	border: 0;
+	
+}
+
+.stats_table{
+	float: right;
+	 clear: both;
+	 margin-top: 2%;
+	 color: #CBD0D1;
+}
+
+.stats_table .table_row .cell{
+	float: left;
+	width: 150px;
+	padding: 5px 10px 4px 19px;
+	margin: 1px;
+}
+.stats_table .table_row .dark{
+	background-color: #01354D;
+}
+
+.big_cell{
+	height: 90px;
+	padding:15px 10px 4px 19px !important;
+}
+
+.currency_text{
+	font-size: 28px;
+	font-weight: 100;
+}
+
+.trading_options_container{
+	float:left;
+	padding-top: 3%;
+}
+
+.trading_options_container .trading_option{
+	background-image: url(../images/trading_sq.png);
+	width:208px;
+	height: 143px;
+	opacity: 0.86;
+	padding: 34px 20px 0 43px;
+	float:left;
+}
+
+.trading_options_container .trading_option img{
+	margin: 2% 2% 0 2%;	
+}
+ 
+.btn{
+	padding: 10px 30px 10px 30px !important;
+	margin-top:10px;
+}
+.green{
+	background-color: #077802;
+}
+.red{
+	background-color: #942625;
+}
+
+.precentage{
+	z-index: 19;
+	float: left;
+	height: 100%;
+	border: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: -11px;
+}
+.rate_text{
+	z-index: 9;
+	position: absolute;
+	float: left;
+}
+.rate_percentage{
+	z-index: 9;
+	margin-right: 5%;
+	float: right;
+}
+.success_rate_bar{
+	border: 1px solid #3D8AB1;
+    border-radius: 5px;
+    height: 23px;
+    width: 240px;
+    clear:both;
+    margin:185px 0 0 3px;
+    padding: 0 10px 0 10px;
+    background-color: #01354D;
+    color: #CBD0D1;
+}
+
+.earth_container{
+	float: right;
+	clear: both;
+	margin: 0 ;
+}
+.globeGl{
+	float: right;
+}
+.bottom_part{
+	width: 100%;
+	clear: all;
+}
+.history_stats{
+	clear: both;	
+	color: #fff;
+	padding-top: 3%;
+}
+.history_stats h3{
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 100;
+	clear: both;
+}
+
+#closed_positions_table{
+	width: 40%;
+	float:left;
+	clear: both;
+}
+
+#running_positions_table{
+	width: 40%;
+	float:left;
+	clear: both;
+}
+
+.hand-cursor{
+	cursor: pointer;
+	cursor: hand;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #BDC9CD;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #BDC9CD;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #BDC9CD;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #BDC9CD;
+}

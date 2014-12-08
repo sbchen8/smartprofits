@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<!-- EARTH -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="assets/earth/css/colorbox.css">
+		<link rel="stylesheet" href="assets/earth/css/earthviewer_styles.min.css">
+		<script src="assets/earth/js/globe.min.js"></script>
+		<script src="assets/js/controller.js"></script>
+		<!-- EARTH -->
+		<title>SmartProfit Trading System</title>
+	</head>
+	<body>
+		<div class="header">
+			<!-- LOGO -->
+			<div class="logo">
+				<img src="assets/images/logo.png">
+			</div>
+			<!-- SIGN UP AREA -->
+			<div class="login_panel" align="right" ng-controller="loginArea">
+				<input type="text" class="login_fields" placeholder="Email">
+				<input type="password" class="login_fields" placeholder="Password">
+				<button>
+					Login
+				</button>
+				<button>
+					Register
+				</button>
+				<br />
+				<a href="" class="forgot_password">Forgot Password?</a>
+			</div>
+			<!-- TRADING AMOUNT -->
+			<div class="trading_amount">
+				<ul>
+					<li style="border: 0;">
+						<img src="assets/images/trading_acc_open.png" class="trading_amount_cta_close hand-cursor">
+						<img src="assets/images/trading_acc_close.png" class="trading_amount_cta_open hand-cursor" style="display: none">
+					</li>
+					<li class="trade_amount slider_inside hand-cursor">
+						<div>
+							$25
+						</div>
+					</li>
+					<li class="trade_amount slider_inside hand-cursor">
+						<div>
+							$50
+						</div>
+					</li>
+					<li class="trade_amount slider_inside hand-cursor">
+						<div>
+							$100
+						</div>
+					</li>
+					<li class="trade_amount slider_inside hand-cursor">
+						<div class="active">
+							$150
+						</div>
+					</li>
+					<li class="trade_amount slider_inside hand-cursor">
+						<div>
+							$300
+						</div>
+					</li>
+					<li>
+						<div style="text-align: left" class="slider_inside" >
+							&nbsp;&nbsp;SELECT
+							<br />
+							&nbsp;&nbsp;PLATFORM&nbsp;&nbsp;
+						</div>
+					</li>
+					<li style="border: 0;margin-top: 1px" class="slider_inside"><img src="assets/images/beeoptions.png">
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="trading_area">
+			<!-- STATS TABLE -->
+			<div class="stats_table">
+				<div class="table_row">
+					<div class="cell dark">
+						Current Balance:
+					</div>
+					<div class="cell dark">
+						$2874.44
+					</div>
+				</div>
+				<div class="table_row">
+					<div class="cell">
+						Open positions:
+					</div>
+					<div class="cell">
+						5
+					</div>
+				</div>
+				<div class="table_row">
+					<div class="cell dark">
+						Won positions:
+					</div>
+					<div class="cell dark">
+						65
+					</div>
+				</div>
+				<div class="table_row">
+					<div class="cell">
+						Lost positions:
+					</div>
+					<div class="cell">
+						120
+					</div>
+				</div>
+				<div class="table_row">
+					<div class="cell dark big_cell">
+						LIVE TRADING:
+						<br />
+						<br />
+					</div>
+					<div class="cell dark big_cell">
+						made on
+						<br/>
+						<span class="currency_text">EUR/AUD</span>
+						<br />
+						(11:19, SKAND..)
+					</div>
+				</div>
+			</div>
+			<!-- STATS TABLE -->
+			<!-- TRADING OPTIONS -->
+			<div class="trading_options_container">
+				<div class="trading_option">
+					Place <img src="assets/images/call.png"> on
+					<br />
+					<span class="currency_text">EUR/AUD</span>
+					<br />
+					<button class="btn green">
+						12:09:56 - Trade Now!
+					</button>
+				</div>
+				<div class="success_rate_bar">
+					<div class="precentage green" style="width:80%">
+						&nbsp;
+					</div>
+					<div class="rate_text">
+						success rate
+					</div>
+					<div class="rate_percentage">
+						80%
+					</div>
+				</div>
+			</div>
+
+			<div class="trading_options_container">
+				<div class="trading_option">
+					Place <img src="assets/images/put.png"> on
+					<br />
+					<span class="currency_text">EUR/AUD</span>
+					<br />
+					<button class="btn red">
+						12:09:56 - Trade Now!
+					</button>
+				</div>
+				<div class="success_rate_bar">
+					<div class="precentage red" style="width:60%">
+						&nbsp;
+					</div>
+					<div class="rate_text">
+						success rate
+					</div>
+					<div class="rate_percentage">
+						60%
+					</div>
+				</div>
+			</div>
+			<!-- TRADING OPTIONS -->
+		</div>
+		<!-- more -->
+		<div class="bottom_part">
+		<!-- Table -->
+		<div class="history_stats">
+			<h3>Running positions</h3>
+			<table id="running_positions_table">
+				<tr style="background: none">
+					<td style="background: none">Asset</td>
+					<td style="background: none">Position</td>
+					<td style="background: none">Amount</td>
+					<td style="background: none">Execution Date</td>
+					<td style="background: none">End Date</td>
+				</tr>
+			</table>
+			
+			<br /><br />
+			
+			<h3>Closed positions</h3>
+			<table id="closed_positions_table">
+				<tr style="background: none">
+					<td>Asset</td>
+					<td>Position</td>
+					<td>Amount</td>
+					<td>Expires</td>
+					<td>Status</td>
+				</tr>
+			</table>
+			
+		</div>
+		<!-- Table -->
+		<!-- EARTH -->
+		<div class="earth_container">
+			<div id="globeGl_" class="globeGl"></div>	
+				<script>
+					$("div#globeGl_").globe({
+						globeRadius:{val:200},
+						globeShine:{val:30},
+						globeTexture:{val:"assets/earth/textures/earthmap10k_comp.jpg"},
+						globeBump:{val:"assets/earth/textures/earthbump1k.jpg"},
+						globeMinScale:{val:1},
+						globeMaxScale:{val:1},
+						globeSegments:{val:50},
+						momentum:{val:0.07},
+						ambientIntensity:{val:4.6},
+						ambientColor:{val:"#555584"},
+						ambientPosX:{val:5000},
+						ambientPosY:{val:-824},
+						ambientPosZ:{val:495},
+						headLampIntensity:{val:1.2},
+						headLampColor:{val:"#ffffff"},
+						headLampPosX:{val:-1000},
+						headLampPosY:{val:1000},
+						headLampPosZ:{val:1000},
+						hotSpotIcon:{val:"assets/earth/textures/hotspotIconsOrange/nano_LT.png"},
+						backPlateTexture:{val:"assets/earth/textures/backPlate_glow.png"},
+						backPlateMargin:{val:10},
+						debugMode:{val:false},
+						popWidth:{val:850},
+						popHeight:{val:620},
+						camX:{val:0},
+						camY:{val:0},
+						camZ:{val:1500},
+						contentClass:{val:".hotspot"},
+						hotspotCssOverride:{val:"hotspot_override"},
+						cameraTargetX:{val:0},
+						cameraTargetY:{val:0},
+						cameraTargetZ:{val:0},
+						autoRotateSpeed:{val:0.02},
+						autoRotate:{val:true},
+						clickExternal:{val:false},
+						assetPath:{val:""},
+					});
+			</script>
+			
+				
+			</div>
+		</div>
+		<!-- EARTH -->
+	</body>
+</html>
+
