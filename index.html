@@ -12,10 +12,12 @@
 		<link rel="stylesheet" href="assets/earth/css/earthviewer_styles.min.css">
 		<script src="assets/earth/js/globe.min.js"></script>
 		<script src="assets/js/controller.js"></script>
+        <script src="assets/js/popup.js"></script>
 		<!-- EARTH -->
 		<title>SmartProfit Trading System</title>
 	</head>
 	<body>
+        <div class="container">
 		<div class="header">
 			<!-- LOGO -->
 			<div class="logo">
@@ -61,7 +63,7 @@
 							$150
 						</div>
 					</li>
-					<li class="trade_amount slider_inside hand-cursor">
+					               <li class="trade_amount slider_inside hand-cursor">
 						<div>
 							$300
 						</div>
@@ -117,8 +119,8 @@
 				<div class="table_row">
 					<div class="cell dark big_cell">
 						LIVE TRADING:
-						<br />
-						<br />
+						<br /><br />
+                         <span class="currency_text">PUT <img src="assets/images/red_triangle.png"></span>
 					</div>
 					<div class="cell dark big_cell">
 						made on
@@ -131,6 +133,7 @@
 			</div>
 			<!-- STATS TABLE -->
 			<!-- TRADING OPTIONS -->
+            <div style="float:left;">
 			<div class="trading_options_container">
 				<div class="trading_option">
 					Place <img src="assets/images/call.png"> on
@@ -175,6 +178,7 @@
 						60%
 					</div>
 				</div>
+                </div>
 			</div>
 			<!-- TRADING OPTIONS -->
 		</div>
@@ -183,29 +187,98 @@
 		<!-- Table -->
 		<div class="history_stats">
 			<h3>Running positions</h3>
-			<table id="running_positions_table">
-				<tr style="background: none">
-					<td style="background: none">Asset</td>
-					<td style="background: none">Position</td>
-					<td style="background: none">Amount</td>
-					<td style="background: none">Execution Date</td>
-					<td style="background: none">End Date</td>
+            <!-- table headers -->
+                <table style="width: 65%; font-size: 13px;">
+				<tr>
+					<td width="10%">Asset</td>
+					<td width="10%">Position</td>
+					<td width="10%">Amount</td>
+					<td width="10%"><span style="position:relative; right:15px;">Execution Date</span></td>
+					<td width="10%">End Date</td>
 				</tr>
+                </table>
+            <!-- table headers -->
+            <div style="overflow:auto; height:80px;width:70%">
+            <table id="running_positions_table">
+                <tr>
+                    <td width="10%">Oil</td>
+                    <td width="10%">Call</td>
+                    <td width="10%">$25.00</td>
+                    <td width="10%">20:00,03/24</td>
+                    <td width="10%">20:00,03/25</td>
+                </tr>
+                  <tr>
+                    <td>Gold</td>
+                    <td>Call</td>
+                    <td>$25.00</td>
+                    <td>20:00,03/24</td>
+                    <td>20:00,03/25</td>
+                </tr>
+                  <tr>
+                    <td>Eur/USD</td>
+                    <td>Put</td>
+                    <td>$25.00</td>
+                    <td>20:00,03/24</td>
+                    <td>20:00,03/25</td>
+                </tr>
+                  <tr>
+                    <td>Eur/USD</td>
+                    <td>Put</td>
+                    <td>$25.00</td>
+                    <td>20:00,03/24</td>
+                    <td>20:00,03/25</td>
+                </tr>
 			</table>
-			
+            </div>
+            
 			<br /><br />
 			
 			<h3>Closed positions</h3>
-			<table id="closed_positions_table">
-				<tr style="background: none">
-					<td>Asset</td>
-					<td>Position</td>
-					<td>Amount</td>
-					<td>Expires</td>
-					<td>Status</td>
+                    <!-- table headers -->
+                <table style="width: 65%;font-size: 13px;">
+				<tr>
+					<td width="10%">Asset</td>
+					<td width="10%">Position</td>
+					<td width="10%">Amount</td>
+					<td width="10%">Expires</td>
+                    <td width="10%"><span style="position:relative; left:15px;">Status</span></td>
 				</tr>
+                </table>
+            <!-- table headers -->
+           <div style="overflow:auto; height:80px; width:70%"> 
+			<table id="closed_positions_table">
+                <tbody>
+                 <tr>
+                    <td width="10%">Oil</td>
+                    <td width="10%">Call</td>
+                    <td width="10%">$25.00</td>
+                    <td width="10%">20:00,03/24</td>
+                    <td width="10%"><span class="red">Lost</span></td>
+                </tr>
+                  <tr>
+                    <td>Gold</td>
+                    <td>Call</td>
+                    <td>$25.00</td>
+                    <td>20:00,03/24</td>
+                    <td><span class="green">Won</span></td>
+                </tr>
+                  <tr>
+                    <td>Eur/USD</td>
+                    <td>Put</td>
+                    <td>$25.00</td>
+                    <td>20:00,03/24</td>
+                    <td><span class="green">Won</span></td>
+                </tr>
+                      <tr>
+                    <td>Eur/USD</td>
+                    <td>Put</td>
+                    <td>$25.00</td>
+                    <td>20:00,03/24</td>
+                    <td><span class="green">Won</span></td>
+                </tr>
+               </tbody>
 			</table>
-			
+          </div>
 		</div>
 		<!-- Table -->
 		<!-- EARTH -->
@@ -213,7 +286,7 @@
 			<div id="globeGl_" class="globeGl"></div>	
 				<script>
 					$("div#globeGl_").globe({
-						globeRadius:{val:200},
+						globeRadius:{val:160},
 						globeShine:{val:30},
 						globeTexture:{val:"assets/earth/textures/earthmap10k_comp.jpg"},
 						globeBump:{val:"assets/earth/textures/earthbump1k.jpg"},
@@ -250,12 +323,22 @@
 						clickExternal:{val:false},
 						assetPath:{val:""},
 					});
+                    
 			</script>
-			
-				
-			</div>
-		</div>
+            </div>
+		</div> <!--bottom part -->
 		<!-- EARTH -->
+        </div> <!-- Container -->
+        <footer >
+            <div class="container">
+           <p>
+        <a href="/contact/">FAQ</a>
+        <a href="/advertising/">Guide Tour</a>
+        <a href="/license/">Contact Us</a>
+        <a href="/archives/">Chat</a>
+      </p>
+                </div>
+        </footer>
 	</body>
 </html>
 

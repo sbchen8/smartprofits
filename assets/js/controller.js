@@ -24,6 +24,8 @@ var smartprofits = {
 	
 }
 
+    ////////////////////////////////////////////////
+
 $(function(){
 	$('.trading_amount_cta_close').on('click', function(){
 		smartprofits.closeAmountMenu();

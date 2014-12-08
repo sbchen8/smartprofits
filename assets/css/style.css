@@ -4,11 +4,29 @@ body {
     background-attachment: fixed;
     background-position: center; 
     background-color: #054261;
-    padding: 2% 15%;
-    font-family: tahoma;
+    font-family:"proxima-nova",'Proxima Nova',sans-serif;
+    min-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding:0;
+    z-index: 10;
+    font-size: 100%;
+}
+   
+.container {
+  margin: 0px auto;
+  padding: 0 10px;
+}
+@media all and (min-width: 1024px) {
+  
+  .container {
+    width: 1050px;
+  }
+    
+
 }
 .header {
-/*	border: 1px solid #fff; */
+    padding: 50px 10px;
 }
 .header .logo{
 	float: left;
@@ -73,11 +91,15 @@ input{
 	
 }
 
+.trading_area { padding: 13px 10px 0px 0px; width: 100%; }
+
 .stats_table{
-	float: right;
+	 float: right;
 	 clear: both;
 	 margin-top: 2%;
 	 color: #CBD0D1;
+     width: 362px;
+     height: 227px;
 }
 
 .stats_table .table_row .cell{
@@ -142,11 +164,13 @@ input{
 	z-index: 9;
 	position: absolute;
 	float: left;
+    padding-top: 3px;
 }
 .rate_percentage{
 	z-index: 9;
 	margin-right: 5%;
 	float: right;
+    padding-top: 3px;
 }
 .success_rate_bar{
 	border: 1px solid #3D8AB1;
@@ -162,8 +186,9 @@ input{
 
 .earth_container{
 	float: right;
-	clear: both;
 	margin: 0 ;
+    width:40%;
+    margin-top: 50px;
 }
 .globeGl{
 	float: right;
@@ -176,6 +201,8 @@ input{
 	clear: both;	
 	color: #fff;
 	padding-top: 3%;
+    width:60%;
+    float:left;
 }
 .history_stats h3{
 	text-transform: uppercase;
@@ -184,16 +211,73 @@ input{
 	clear: both;
 }
 
-#closed_positions_table{
-	width: 40%;
+/* Closed positions table */
+#closed_positions_table {
+	width: 100%;
 	float:left;
 	clear: both;
+    border-spacing: 0px;
+    text-transform:uppercase;
+    padding-right: 2px;
+    font-size: 14px;
+}
+#closed_positions_table > tbody > tr > td {
+        padding: 5px 0px 5px 5px;
+}
+#closed_positions_table tbody tr:nth-child(odd) {
+   background-color: #01354D;
+}
+#closed_positions_table > thead > tr > th {
+    font-weight: normal;
+    text-align: left;
+    text-transform:none;
 }
 
+#closed_positions_table > tbody > tr > td > span.green {
+        background-color: green;
+        padding:0px 3px 0px 3px;
+}
+#closed_positions_table > tbody > tr > td > span.red {
+        background-color: red;
+        padding:0px 3px 0px 3px;
+}
+
+/*Running positions table */
 #running_positions_table{
-	width: 40%;
+	width: 100%;
 	float:left;
 	clear: both;
+    border-spacing: 0px;
+    text-transform:uppercase;
+    padding-right: 2px;
+    font-size: 14px;
+}
+
+#running_positions_table > thead > tr > th {
+    font-weight: normal;
+    text-align: left;
+    text-transform:none;
+    position: fixed;
+    top: 0;
+}
+#running_positions_table tbody tr:nth-child(odd) {
+   background-color: #01354D;
+}
+#running_positions_table > tbody > tr > td {
+        padding: 5px 0px 5px 5px;
+}
+/* Scroll Style */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+   background:rgba(1, 53, 77, 1); 
+    
+}
+ 
+::-webkit-scrollbar-thumb {
+    background:rgba(212, 214, 219, 0.8);
+    border-radius: 10px;
 }
 
 .hand-cursor{
@@ -214,4 +298,68 @@ input{
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
    color:    #BDC9CD;
+}
+
+/* Footer */
+footer {
+    float:left;  width: 100%; border-top: 1px solid #888;/*padding: 50px 0 250px 0*/;
+}
+footer > .container > p > a {
+    color:#fff;
+    text-decoration: none;
+    padding: 0px 0px 0px 23px;
+}
+footer > .container > p {
+    padding: 2% 0%;
+}
+footer > .container > p > a:hover {
+    text-decoration: underline;
+}
+
+/*////////  POPUP WINDOW STYLE /////////*/
+.popup_window h3 {
+    font-size:24px;
+    padding: 20px 0px 0px 20px;
+}
+.popup_window h3 > b {
+    font-weight: 800;
+    }
+.popup_window  p {
+    font-size: 17px;
+    padding: 0px 0px 0px 20px;
+    font-weight: bold;
+
+}
+.popup_window a {
+    padding: 6px 12px 6px 12px;
+    background-color: #01354D;
+    color:white;
+    text-decoration:none !important; 
+    position: relative;
+    left:358px;
+    top:35px;
+}
+.popup_window > a.btn2 { padding: 6px 20px 6px 20px; }
+
+.popup1 {width: 535px;height: 229px; background-image: url('../images/popup_1.png'); position: absolute; top: 40%; left: 35%; }
+.popup2 {width: 535px;height: 180px;background-image: url('../images/popup_2.png');  position: absolute; top: 20%; left: 23%;}
+.popup2 p {padding-top:20px;} 
+.popup2 a {left: 360px; top: 0px;}
+.popup3 {width: 432px;height: 152px;background-image: url('../images/popup_3.png');  position: absolute; top: 74%; left: 50%;}
+.popup3 p {padding-top:20px;} 
+.popup3 a {top: -10px; left: 260px;}
+.popup4 {width: 432px;height: 162px;background-image: url('../images/popup_4.png'); position: absolute; top: 20%;left: 50%;}
+.popup4 p {padding-top:40px;}
+.popup4 a {top: 8px; left: 260px;}
+.popup5 {width: 411px;height: 146px;background-image: url('../images/popup_5.png'); position: absolute; top: 2%; left: 44%;}
+.popup5 p {padding-top:1re0px;}
+.popup5 a {top:-5px; left: 260px;}
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)  { 
+    .popup1 { position: absolute; top: 30%; left: 20.5%; }
+    .popup2 { position: absolute; top: 28%; left: 1%; }
+    .popup3 { position: absolute; top: 107%; left: 35%; }
+    .popup4 { position: absolute; top: 29%; left:53%; }
+    .popup5 { position: absolute; top: 13%; left: 40.6%; }
 }
