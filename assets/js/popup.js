@@ -3,13 +3,14 @@ var popup = {
     isOverlayed: false,
  
     overlayScreen: function (){
-        console.log('Overlaying ');
+        console.log('Overlaying');
         $('body').prepend("<div style='width: 100%; height: 100%; background: #013f5d; opacity: 0.8; position: fixed; z-index: 999999' id='overlay-master'></div>");
         popup.isOverlayed = true;
         console.log(popup);
     },
     
     removeOverlay: function(){ 
+        $('#popup-master').remove();
         $('#overlay-master').remove();
         popup.isOverlayed = false;
     },
@@ -17,6 +18,49 @@ var popup = {
     closePopup: function() {
         $('.popup_window').remove();
     },
+    
+    // ajax function for get data from html //
+    
+    createNewPopupFromAjax: function(htmlData){
+        console.log(htmlData);
+        $('body').prepend('<div class="content" id="popup-master"></div>');
+        $('#popup-master').prepend(htmlData);
+    },
+    
+    ajaxPopup: function (url){
+        $.get( url, function( data ) {
+            popup.createNewPopupFromAjax(data);
+        });
+        // Error handling
+        
+    },
+    
+    loadFaqPage:function (){
+        popup.ajaxPopup("faq.html");
+    },
+    
+    loadContactUsPage:function (){
+        popup.ajaxPopup("contact-us.html");
+    },
+    
+    loadGuidePage:function (){
+        popup.ajaxPopup("guide-tour.html");
+    },
+    
+    loadDisclaimerPage:function (){
+        popup.ajaxPopup("disclaimer.html");
+    },
+    
+    loadPrivacyPage:function (){
+        popup.ajaxPopup("privacy-policy.html");
+    },
+    
+    loadTermsPage:function (){
+        popup.ajaxPopup("terms.html");
+    },
+    
+    
+    // end of ajax function for get data from html //
     
     activateFirstPopup: function(){
         $('#overlay-master').append('<div id="1_popup" class="popup_window"><h3>Welcome to <b>SmartProfits Auto Trader</b>.</h3><p>Learn how you can load up your account with fast cash by letting Smart Profits Auto Trader work for you. Just follow this quick tour. </p><a href="javascript:popup.removeOverlay() ">Cancel</a> <a class="btn2" href="javascript: popup.activateSecondPopup()">Start</a></div>'); 
@@ -73,6 +117,8 @@ var popup = {
     
     
 }
+
+
 
 $(function(){
     // once the page finished loading

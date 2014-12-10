@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Proxima+Nova);
 body {
 	background-image: url('../images/bg_1.jpg');
     background-repeat: repeat-x;
@@ -11,6 +12,13 @@ body {
     padding:0;
     z-index: 10;
     font-size: 100%;
+    scrollbar-face-color: #AAB5BE;
+    scrollbar-highlight-color: #AAB5BE;
+    scrollbar-3dlight-color: #AAB5BE;
+    scrollbar-darkshadow-color: #AAB5BE;
+    scrollbar-shadow-color: #AAB5BE;
+    scrollbar-arrow-color: #01354D;
+    scrollbar-track-color: #01354D;
 }
    
 .container {
@@ -164,7 +172,7 @@ input{
 	z-index: 9;
 	position: absolute;
 	float: left;
-    padding-top: 3px;
+    padding-top: 1px;
 }
 .rate_percentage{
 	z-index: 9;
@@ -378,4 +386,71 @@ and (max-width : 1024px)  {
     .popup7 { position: absolute; top: 47%; left: 56%; }
     .popup8 { position: absolute; top: 13%; left: 55%; }
     .popup9 { position: absolute; top: 13%; left: 38%;}
+}
+
+
+/*////////  FAQ PAGE STYLE /////////*/
+.content {
+    width: 900px; 
+    left:0;  
+    right:0;
+    margin-left:auto;  
+    margin-right:auto;
+    opacity: 0.9; 
+    position:absolute;
+    top:90px;
+    z-index: 999999;
+    border: 2px solid #fff;
+background: #6f95a7; /* Old browsers */
+background: -moz-linear-gradient(top,  #6f95a7 0%, #e5f2f9 24%, #e1ebf4 75%, #6f95a7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6f95a7), color-stop(24%,#e5f2f9), color-stop(75%,#e1ebf4), color-stop(100%,#6f95a7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f95a7', endColorstr='#6f95a7',GradientType=0 ); /* IE6-9 */
+
+}
+
+.sidebar {
+    float:left;
+    width: 160px;
+}
+.text{
+    width: 680px;
+    height: 800px;
+    float:right;
+    padding : 20px;
+    overflow-y: scroll;
+}
+#popup-master > div.text  > p {
+    
+}
+#popup-master > div.text  > h1 {
+    font-size:15px;
+    text-transform:  uppercase;
+}
+#popup-master > div.text  > h2 {
+    background: none;
+    padding:0;
+}
+#popup-master > div.sidebar > img.faq_logo {
+        padding-top:40px;
+        padding-left: 20px;
+}
+#popup-master > div.sidebar > img.close_but {
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    cursor: pointer;
+}
+#popup-master > div.sidebar > a {
+      padding: 6px 12px 6px 12px;
+    background-color: #01354D;
+    color:white;
+    text-decoration:none !important; 
+    position: relative;
+    top:633px;
+    left:35px;
+    font-size:25px;
 }
