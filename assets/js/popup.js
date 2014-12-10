@@ -63,7 +63,7 @@ var popup = {
     // end of ajax function for get data from html //
     
     activateFirstPopup: function(){
-        $('#overlay-master').append('<div id="1_popup" class="popup_window"><h3>Welcome to <b>SmartProfits Auto Trader</b>.</h3><p>Learn how you can load up your account with fast cash by letting Smart Profits Auto Trader work for you. Just follow this quick tour. </p><a href="javascript:popup.removeOverlay() ">Cancel</a> <a class="btn2" href="javascript: popup.activateSecondPopup()">Start</a></div>'); 
+        $('#overlay-master').append('<div id="1_popup" class="popup_window"> <img onclick="popup.removeOverlay()" class="close_but" src="assets/images/close_but.png" /><h3>Welcome to <b>SmartProfits Auto Trader</b>.</h3><p>Learn how you can load up your account with fast cash by letting Smart Profits Auto Trader work for you. Just follow this quick tour. </p><a href="javascript:popup.removeOverlay() ">Cancel</a> <a class="btn2" href="javascript: popup.activateSecondPopup()">Start</a></div>'); 
         $('#1_popup').addClass("popup1");
           },
     

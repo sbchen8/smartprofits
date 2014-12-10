@@ -350,6 +350,7 @@ footer > .container > p > a:hover {
 .popup_window > a.btn2 { padding: 6px 20px 6px 20px; }
 
 .popup1 {width: 535px;height: 229px; background-image: url('../images/popup_1.png'); position: absolute; top: 40%; left: 35%; }
+.popup1 > img.close_but { position: absolute;right: 10px;top: 8px; cursor: pointer; }
 .popup2 {width: 535px;height: 180px;background-image: url('../images/popup_2.png');  position: absolute; top: 1%; left: 50%;}
 .popup2 p {padding-top:20px;} 
 .popup2 a {left: 360px; top: 25px;}
@@ -423,16 +424,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f95a7', end
     padding : 20px;
     overflow-y: scroll;
 }
-#popup-master > div.text  > p {
-    
-}
 #popup-master > div.text  > h1 {
     font-size:15px;
-    text-transform:  uppercase;
+    text-transform:  uppercase;    
 }
 #popup-master > div.text  > h2 {
     background: none;
     padding:0;
+    color:#0A415B;
 }
 #popup-master > div.sidebar > img.faq_logo {
         padding-top:40px;
