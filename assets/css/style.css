@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Proxima+Nova);
 body {
 	background-image: url('../images/bg_1.jpg');
     background-repeat: repeat-x;
@@ -11,6 +12,13 @@ body {
     padding:0;
     z-index: 10;
     font-size: 100%;
+    scrollbar-face-color: #AAB5BE;
+    scrollbar-highlight-color: #AAB5BE;
+    scrollbar-3dlight-color: #AAB5BE;
+    scrollbar-darkshadow-color: #AAB5BE;
+    scrollbar-shadow-color: #AAB5BE;
+    scrollbar-arrow-color: #01354D;
+    scrollbar-track-color: #01354D;
 }
    
 .container {
@@ -164,7 +172,7 @@ input{
 	z-index: 9;
 	position: absolute;
 	float: left;
-    padding-top: 3px;
+    padding-top: 1px;
 }
 .rate_percentage{
 	z-index: 9;
@@ -319,13 +327,13 @@ footer > .container > p > a:hover {
 /*////////  POPUP WINDOW STYLE /////////*/
 .popup_window h3 {
     font-size:24px;
-    padding: 20px 0px 0px 20px;
+    padding: 0px 0px 0px 20px;
 }
 .popup_window h3 > b {
     font-weight: 800;
     }
 .popup_window  p {
-    font-size: 17px;
+    font-size: 16px;
     padding: 0px 0px 0px 20px;
     font-weight: bold;
 
@@ -342,24 +350,106 @@ footer > .container > p > a:hover {
 .popup_window > a.btn2 { padding: 6px 20px 6px 20px; }
 
 .popup1 {width: 535px;height: 229px; background-image: url('../images/popup_1.png'); position: absolute; top: 40%; left: 35%; }
-.popup2 {width: 535px;height: 180px;background-image: url('../images/popup_2.png');  position: absolute; top: 20%; left: 23%;}
+.popup1 > img.close_but { position: absolute;right: 10px;top: 8px; cursor: pointer; }
+.popup2 {width: 535px;height: 180px;background-image: url('../images/popup_2.png');  position: absolute; top: 1%; left: 50%;}
 .popup2 p {padding-top:20px;} 
-.popup2 a {left: 360px; top: 0px;}
-.popup3 {width: 432px;height: 152px;background-image: url('../images/popup_3.png');  position: absolute; top: 74%; left: 50%;}
-.popup3 p {padding-top:20px;} 
-.popup3 a {top: -10px; left: 260px;}
-.popup4 {width: 432px;height: 162px;background-image: url('../images/popup_4.png'); position: absolute; top: 20%;left: 50%;}
+.popup2 a {left: 360px; top: 25px;}
+.popup3 {width: 535px;height: 180px;;background-image: url('../images/popup_2.png');  position: absolute; top: 12%; left: 20%;}
+.popup3 p {padding-top:10px;} 
+.popup3 a {top: 13px; left: 370px;}
+.popup4 {width: 432px;height: 162px;background-image: url('../images/popup_4.png'); position: absolute; top: 37%;left: 20%;}
 .popup4 p {padding-top:40px;}
-.popup4 a {top: 8px; left: 260px;}
-.popup5 {width: 411px;height: 146px;background-image: url('../images/popup_5.png'); position: absolute; top: 2%; left: 44%;}
-.popup5 p {padding-top:1re0px;}
-.popup5 a {top:-5px; left: 260px;}
+.popup4 a {top:20px; left: 265px;}
+.popup5 {width: 411px;height: 146px;background-image: url('../images/popup_5.png'); position: absolute; top: 32%; left: 23%;}
+.popup5 p {padding-top:10px;}
+.popup5 a {top:2px; left: 250px;}
+.popup6 {width: 432px;height: 162px;background-image: url('../images/popup_4.png'); position: absolute; top: 78%; left: 23%;}
+.popup6 p {padding-top:40px;}
+.popup6 a {top:20px; left: 265px;}
+.popup7 {width: 411px;height: 146px;background-image: url('../images/popup_5.png'); position: absolute; top: 47%; left: 56%;}
+.popup7 p {padding-top:10px;}
+.popup7 a {top:3px; left: 250px;}
+.popup8 {width: 535px;height: 180px;background-image: url('../images/popup_8.png'); position: absolute; top: 13%; left: 55%;}
+.popup8 p {padding-top:33px;}
+.popup8 a {top:-5px; left: 370px;}
+.popup9 {width: 432px;height: 162px;background-image: url('../images/popup_4.png'); position: absolute; top: 13%; left: 38%;}
+.popup9 p {padding-top:33px;}
+.popup9 a {top:25px; left: 265px;}
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1024px)  { 
     .popup1 { position: absolute; top: 30%; left: 20.5%; }
-    .popup2 { position: absolute; top: 28%; left: 1%; }
-    .popup3 { position: absolute; top: 107%; left: 35%; }
-    .popup4 { position: absolute; top: 29%; left:53%; }
-    .popup5 { position: absolute; top: 13%; left: 40.6%; }
+    .popup2 { position: absolute; top: 1%; left: 50%;}
+    .popup3 { position: absolute; top: 20%; left: 0%;}
+    .popup4 { position: absolute; top: 50%;left: 0%; }
+    .popup5 { position: absolute; top: 32%; left: 0%; }
+    .popup6 { position: absolute; top: 78%; left: 0%; }
+    .popup7 { position: absolute; top: 47%; left: 56%; }
+    .popup8 { position: absolute; top: 13%; left: 55%; }
+    .popup9 { position: absolute; top: 13%; left: 38%;}
+}
+
+
+/*////////  FAQ PAGE STYLE /////////*/
+.content {
+    width: 900px; 
+    left:0;  
+    right:0;
+    margin-left:auto;  
+    margin-right:auto;
+    opacity: 0.9; 
+    position:absolute;
+    top:90px;
+    z-index: 999999;
+    border: 2px solid #fff;
+background: #6f95a7; /* Old browsers */
+background: -moz-linear-gradient(top,  #6f95a7 0%, #e5f2f9 24%, #e1ebf4 75%, #6f95a7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6f95a7), color-stop(24%,#e5f2f9), color-stop(75%,#e1ebf4), color-stop(100%,#6f95a7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #6f95a7 0%,#e5f2f9 24%,#e1ebf4 75%,#6f95a7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f95a7', endColorstr='#6f95a7',GradientType=0 ); /* IE6-9 */
+
+}
+
+.sidebar {
+    float:left;
+    width: 160px;
+}
+.text{
+    width: 680px;
+    height: 800px;
+    float:right;
+    padding : 20px;
+    overflow-y: scroll;
+}
+#popup-master > div.text  > h1 {
+    font-size:15px;
+    text-transform:  uppercase;    
+}
+#popup-master > div.text  > h2 {
+    background: none;
+    padding:0;
+    color:#0A415B;
+}
+#popup-master > div.sidebar > img.faq_logo {
+        padding-top:40px;
+        padding-left: 20px;
+}
+#popup-master > div.sidebar > img.close_but {
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    cursor: pointer;
+}
+#popup-master > div.sidebar > a {
+      padding: 6px 12px 6px 12px;
+    background-color: #01354D;
+    color:white;
+    text-decoration:none !important; 
+    position: relative;
+    top:633px;
+    left:35px;
+    font-size:25px;
 }
