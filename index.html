@@ -14,7 +14,11 @@
 		<script src="assets/js/controller.js"></script>
         <script src="assets/js/popup.js"></script>
         <!-- Platform -->
+        <script src="assets/js/countdown/jquery.plugin.js"></script>
+        <script src="assets/js/countdown/jquery.countdown.js"></script>
+        
         <script src="assets/js/platform.js"></script>
+        <script src="assets/js/Gui.js"></script>
         <script type="text/javascript" src="//www.qa.trade.spotoption.com/SpotOptionPlugin.js"></script>
 		<!-- EARTH -->
 		<title>SmartProfit Trading System</title>
@@ -27,18 +31,27 @@
 				<img src="assets/images/logo.png">
 			</div>
 			<!-- SIGN UP AREA -->
-			<div class="login_panel" align="right" ng-controller="loginArea">
-				<input type="text" class="login_fields" placeholder="Email">
-				<input type="password" class="login_fields" placeholder="Password">
-				<button>
-					Login
-				</button>
-				<button>
-					Register
-				</button>
+			<div class="login_panel" id="unlogged_user_box" align="right" ng-controller="loginArea">
+				<input type="text" id="login_user" class="login_fields" placeholder="Email">
+				<input type="password" id="login_password" class="login_fields" placeholder="Password">
+				
+					<button onclick="platform.login($('#login_user').val(), $('#login_password').val());">
+						Login
+					</button>
+					<button id="btn_register">
+						Register
+					</button>
+				
 				<br />
 				<a href="" class="forgot_password">Forgot Password?</a>
 			</div>
+			
+			<div id="logged_user_box" style="display: none; " align="right">
+					<a  style="color: #fff;" >Hi <span id="logged_user_name"></span></a>
+					<button id="btn_signout" onclick="platform.logout();">Sign out</button>
+				</div>
+			
+			
 			<!-- TRADING AMOUNT -->
 			<div class="trading_amount">
 				<ul>
@@ -91,32 +104,32 @@
 					<div class="cell dark">
 						Current Balance:
 					</div>
-					<div class="cell dark">
-						 <span id="userBalance">0</span>
+					<div class="cell dark ">
+						 <span id="userBalance" class="value_cell">0</span>
 					</div>
 				</div>
 				<div class="table_row">
 					<div class="cell">
 						Open positions:
 					</div>
-					<div class="cell">
-						5
+					<div class="cell value_cell">
+						0
 					</div>
 				</div>
 				<div class="table_row">
 					<div class="cell dark">
 						Won positions:
 					</div>
-					<div class="cell dark">
-						65
+					<div class="cell dark value_cell">
+						0
 					</div>
 				</div>
 				<div class="table_row">
 					<div class="cell">
 						Lost positions:
 					</div>
-					<div class="cell">
-						120
+					<div class="cell value_cell">
+						0
 					</div>
 				</div>
 				<div class="table_row">
@@ -137,14 +150,14 @@
 			<!-- STATS TABLE -->
 			<!-- TRADING OPTIONS -->
             <div style="float:left;">
-			<div class="trading_options_container">
-				<div class="trading_option">
+			<div class="trading_options_container" style="display: none">
+				<div class="trading_option" id="trading_call">
 					Place <img src="assets/images/call.png"> on
 					<br />
-					<span class="currency_text">EUR/AUD</span>
+					<span class="currency_text"></span>
 					<br />
-					<button class="btn green">
-						12:09:56 - Trade Now!
+					<button class="btn green" style="display: none">
+						<span class="timer">12:09:56</span> - Trade Now!
 					</button>
 				</div>
 				<div class="success_rate_bar">
@@ -160,14 +173,14 @@
 				</div>
 			</div>
 
-			<div class="trading_options_container">
-				<div class="trading_option">
+			<div class="trading_options_container" style="display: none">
+				<div class="trading_option" id="trading_put">
 					Place <img src="assets/images/put.png"> on
 					<br />
-					<span class="currency_text">EUR/AUD</span>
+					<span class="currency_text"></span>
 					<br />
-					<button class="btn red">
-						12:09:56 - Trade Now!
+					<button class="btn red" style="display: none">
+						<span class="timer">12:09:56</span> - Trade Now!
 					</button>
 				</div>
 				<div class="success_rate_bar">
@@ -201,7 +214,7 @@
 				</tr>
                 </table>
             <!-- table headers -->
-            <div style="overflow:auto; height:80px;width:70%">
+            <div style="overflow:auto; height:80px;width:70%" class="user_platform_info">
             <table id="running_positions_table">
                 <tr>
                     <td width="10%">Oil</td>
@@ -248,7 +261,7 @@
 				</tr>
                 </table>
             <!-- table headers -->
-           <div style="overflow:auto; height:80px; width:70%"> 
+           <div style="overflow:auto; height:80px; width:70%" class="user_platform_info"> 
 			<table id="closed_positions_table">
                 <tbody>
                  <tr>
@@ -285,7 +298,7 @@
 		</div>
 		<!-- Table -->
 		<!-- EARTH -->
-		<div class="earth_container">
+		<div class="earth_container" >
 			<div id="globeGl_" class="globeGl"></div>	
 				<script>
 					$("div#globeGl_").globe({

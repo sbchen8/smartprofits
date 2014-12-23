@@ -149,7 +149,7 @@ input{
 }
  
 .btn{
-	padding: 10px 30px 10px 30px !important;
+	padding: 10px  !important;
 	margin-top:10px;
 }
 .green{
@@ -176,9 +176,10 @@ input{
 }
 .rate_percentage{
 	z-index: 9;
-	margin-right: 5%;
+	
 	float: right;
     padding-top: 3px;
+    
 }
 .success_rate_bar{
 	border: 1px solid #3D8AB1;

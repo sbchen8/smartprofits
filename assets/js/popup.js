@@ -35,6 +35,16 @@ var popup = {
         
     },
     
+    activateErrorPopup: function(error){
+   /* 	popup.closePopup();
+		$('#overlay-master').append('<div id="error_popup" class="popup_window"> <img onclick="popup.removeOverlay()" class="close_but" src="assets/images/close_but.png" /><h3>Error</b></h3><p>'+error+'</p></div>'); 
+        $('#error_popup').addClass("1_popup");*/
+       popup.closePopup();
+        $('#overlay-master').append('<div id="1_popup" class="popup_window"> <img onclick="popup.removeOverlay()" class="close_but" src="assets/images/close_but.png" /><h3>Error</b></h3><p style="color: red">Something went wrong, error message: '+error+'</p></div>'); 
+        $('#1_popup').addClass("popup1");
+          
+    },
+    
     loadFaqPage:function (){
         popup.ajaxPopup("faq.html");
     },
